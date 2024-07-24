@@ -1,0 +1,24 @@
+import java.util.*;
+
+class HelloWorld {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String num = sc.next();
+        String flag = "Valid";
+       
+        // Check if the number starts with a digit between '6' and '9'
+        char firstChar = num.charAt(0);
+        if (firstChar < '6' || firstChar > '9') {
+            flag = "Not valid";
+        } else {
+            // Check if the number is exactly 10 digits long and contains only digits
+            if (num.length() != 10 || !num.matches("[0-9]+")) {
+                flag = "Not valid";
+            }
+        }
+       
+        // Print the final result
+        System.out.println(flag);
+    }
+}
+
